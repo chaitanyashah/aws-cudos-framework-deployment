@@ -156,6 +156,19 @@ views:
   data_transfer_view:
     dependsOn:
       cur: true
+      cur2:
+        - product['servicename']
+        - product['product_name']
+        - product['transfer_type']
+        - line_item_blended_cost
+        - line_item_unblended_cost
+        - pricing_public_on_demand_cost
+        - line_item_usage_type
+        - product_from_location_type
+        - line_item_blended_rate
+        - line_item_unblended_rate
+        - pricing_public_on_demand_rate
+        - product_usagetype
     data: |-
       CREATE OR REPLACE VIEW ${athena_database_name}.data_transfer_view AS
       SELECT
